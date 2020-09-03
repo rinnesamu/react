@@ -1,4 +1,7 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+a simple menu using React
+<br/>The example is based on the material from fullstackopen course 
+owner by University of Helsinki
+<br/>This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

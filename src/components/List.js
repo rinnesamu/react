@@ -1,39 +1,24 @@
 import React from "react";
-import { Table } from 'react-bootstrap'
-
+//import { Table } from 'react-bootstrap'
+import axios from 'axios';
+import { JsonToTable } from "react-json-to-table";
+let data;
 const List = () => {
+
 
     return(
         <div className="container">
-            {/* A JSX comment */}
-
-            {/* <div>
-                <p>Valinta 2.</p>
-            </div>
-            */}
-            <Table striped>
-            <tbody>
-                <tr>
-                    <td>
-                        <p>1. rivi</p>
-                    </td>
-                    <td>
-                        <p>kdfjhfdkjhsfdkjh</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>2. rivi</p>
-                    </td>
-                    <td>
-                        <p>jhgkjdkgjgdkjhdgk</p>
-                    </td>
-                </tr>
-            </tbody>
-            </Table>
-
+            <p>Tapahtumat:</p>
+          <JsonToTable json={data} />
         </div>
     )
 }
+const promise = axios.get('http://localhost:3001/events');
+promise.then(response => {
+    data = response.data;
+    for (let i = 0; i < data.length; i++){
+        data[i].important = data[i].important.toString(); // taulukko ei jostain syystä näytä boolean arvoja, joten muutetaan ne string muotoon
+    }
+})
 
 export default List

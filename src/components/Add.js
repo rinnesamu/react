@@ -6,7 +6,7 @@ const Add = () => {
     return(
         <div className="container">
            <div>
-               <p>Valinta 1.</p>
+               <p>Tapahtumat:</p>
            </div>
         </div>
     )
